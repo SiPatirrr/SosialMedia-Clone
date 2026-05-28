@@ -1,0 +1,49 @@
+.Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #E7E1B1;
+}
+
+.Box{
+    width: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: #FBF5DD;
+    box-shadow: 0px 0px 10px gray;
+}
+
+.Box p{
+    margin: 0;
+}
+
+.Box input{
+    padding: 10px;
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease;
+}
+
+.Box input:hover{
+    box-shadow: 0 0 10px gray;
+}
+
+.Box button{
+    padding: 10px;
+    border-radius: 15px;
+    border-style: none;
+    background-color: lightgreen;
+    transition: box-shadow 0.3s ease;
+}
+
+.Box button:hover{
+    box-shadow: 0 0 10px green;
+}
+
+.Box a{
+    text-decoration: underline;
+    color: inherit;
+}

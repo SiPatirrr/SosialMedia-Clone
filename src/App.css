@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
+.Box p{
+    font-family: "Google Sans";
+}
+
+.Box h1{
+    font-family: "Google Sans";
+}
+
+.Box input{
+    font-family: "Google Sans";
+}
+
+.Box button{
+    font-family: "Google Sans";
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: "Google Sans";
+}

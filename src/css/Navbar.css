@@ -1,0 +1,35 @@
+.Navbar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 70px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: 0 0 10px gray;
+}
+
+.Navbar ul{
+    display: flex;
+    flex-direction: column;
+    height: 96vh;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.Nav-icon{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    animation: transform 0.5s ease-in-out;
+}
+
+.Nav-icon:hover{
+    transform: scale(1.2);
+}
+
+.Icon-bottom{
+    margin-top: auto;
+}
