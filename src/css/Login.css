@@ -6,6 +6,10 @@
     background-color: #E7E1B1;
 }
 
+body{
+    user-select: none;
+}
+
 .Box{
     width: 300px;
     padding: 20px;
@@ -41,6 +45,7 @@
 
 .Box button:hover{
     box-shadow: 0 0 10px green;
+    font: 14px;
 }
 
 .Box a{

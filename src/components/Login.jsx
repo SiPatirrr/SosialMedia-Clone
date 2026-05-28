@@ -6,14 +6,24 @@ import 'sweetalert2/themes/bootstrap-5.css'
 
 const LoginPage = () => {
     const navigate = useNavigate()
-    // Contoh Logic Login
+    const data = localStorage.getItem("user");
+    const user = JSON.parse(data)
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
     const login = () => {
-        if (username === "admin" && password === "123"){
+        if (username === "" && password === ""){
+            Swal.fire({
+                theme:'bootstrap-5',
+                title:'Kesalahan',
+                text:'Harap Isi Username Dan Password',
+                icon:'error',
+                confirmButtonText:'Oke'
+            })
+        } else if((username === user.username || username === user.email) && password === user.password) {
             navigate("/home")
-        } else {
+            
+        }else{
             Swal.fire({
                 theme:'bootstrap-5',
                 title:'Kesalahan',
@@ -21,6 +31,7 @@ const LoginPage = () => {
                 icon:'error',
                 confirmButtonText:'Oke'
             })
+
         }
     }
 
@@ -30,9 +41,9 @@ const LoginPage = () => {
             <h1>Masuk</h1>
 
             <p>Username or Email</p>
-            <input type="text" placeholder="Username or Email | admin" onChange={(e) => setUsername(e.target.value)}/>
+            <input type="text" placeholder="Username or Email" onChange={(e) => setUsername(e.target.value)}/>
             <p>Password</p>
-            <input type="password" placeholder="Password | 123" onChange={(e) => setPassword(e.target.value)}/>
+            <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
             <p>Belum Punya Akun? <Link to="/signup">Daftar</Link></p>
 
             <button onClick={login}>Masuk</button>

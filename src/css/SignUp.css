@@ -6,6 +6,10 @@
     background-color: #E7E1B1;
 }
 
+body{
+    user-select: none;
+}
+
 .Box{
     width: 300px;
     padding: 20px;
