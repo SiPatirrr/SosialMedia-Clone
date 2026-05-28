@@ -7,8 +7,8 @@ import IconShare from "../assets/share.png";
 import { useState, useEffect } from "react";
 
 function PostCard() {
-    const [likes, setlikes] = useState(0)
-    const [comment, setcomment] = useState(0)
+    // const [likes, setlikes] = useState(0)
+    // const [comment, setcomment] = useState(0)
 
     const [users, setUsers] = useState([]);
 
@@ -16,12 +16,47 @@ function PostCard() {
         fetch("https://jsonplaceholder.typicode.com/users")
             .then((response) => response.json())
             .then((data) => {
-                setUsers(data);
+                const NewData = data.map((user) => ({
+                    ...user,
+                    likes: 0,
+                    comment: 0
+                }))
+                setUsers(NewData);
             })
             .catch((error) => {
                 console.log(error);
             });
     }, []);
+
+    const newLikes = (id) => {
+        setUsers(
+            users.map((user) => {
+                if (user.id === id) {
+                    return {
+                        ...user,
+                        likes: user.likes + 1
+                    }
+                } else {
+                    return user
+                }
+            })
+        )
+    }
+
+    const newComment = (id) => {
+        setUsers(
+            users.map((user) => {
+                if (user.id === id) {
+                    return {
+                        ...user,
+                        comment: user.comment + 1
+                    }
+                } else {
+                    return user
+                }
+            })
+        )
+    }
 
     return (
         users.map((user) => (
@@ -32,14 +67,14 @@ function PostCard() {
             </div>
             <img src={PostImage} alt="Post" className="post-image" />
             <div className="post-action">
-                <div className="action-item" onClick={() => setlikes(likes + 1)}>
+                <div className="action-item" onClick={() => newLikes(user.id)}>
                     <img src={IconLike} alt="Like" className="action-icon" />
-                    <span>{likes}</span>
+                    <span>{user.likes}</span>
                 </div>
 
-                <div className="action-item" onClick={() => setcomment(comment + 1)}>
+                <div className="action-item" onClick={() => newComment(user.id)}>
                     <img src={IconComment} alt="Comment" className="action-icon" />
-                    <span>{comment}</span>
+                    <span>{user.comment}</span>
                 </div>
 
                 <div className="action-item">

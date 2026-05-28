@@ -30,9 +30,9 @@ const LoginPage = () => {
             <h1>Masuk</h1>
 
             <p>Username or Email</p>
-            <input type="text" placeholder="Username or Email" onChange={(e) => setUsername(e.target.value)}/>
+            <input type="text" placeholder="Username or Email | admin" onChange={(e) => setUsername(e.target.value)}/>
             <p>Password</p>
-            <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
+            <input type="password" placeholder="Password | 123" onChange={(e) => setPassword(e.target.value)}/>
             <p>Belum Punya Akun? <Link to="/signup">Daftar</Link></p>
 
             <button onClick={login}>Masuk</button>
