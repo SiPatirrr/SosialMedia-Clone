@@ -1,32 +1,15 @@
+import React from "react";
 import "../css/PostCard.css";
 import IconProfile from "../assets/user.png";
 import PostImage from "../assets/post.png";
 import IconLike from "../assets/like.png";
 import IconComment from "../assets/messagef.png";
 import IconShare from "../assets/share.png";
-import { useState, useEffect } from "react";
 
-function PostCard() {
+function PostCard({ users, setUsers }) {
     // const [likes, setlikes] = useState(0)
     // const [comment, setcomment] = useState(0)
 
-    const [users, setUsers] = useState([]);
-
-    useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/users")
-            .then((response) => response.json())
-            .then((data) => {
-                const NewData = data.map((user) => ({
-                    ...user,
-                    likes: 0,
-                    comment: 0
-                }))
-                setUsers(NewData);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }, []);
 
     const newLikes = (id) => {
         setUsers(

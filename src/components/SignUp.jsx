@@ -34,12 +34,12 @@ const Signup = () => {
         )
 
         Swal.fire({
-                theme:'bootstrap-5',
-                title:'Berhasil',
-                text:'Akun berhasil Di buat',
-                icon:'success',
-                confirmButtonText:'Oke'
-            })
+            theme:'bootstrap-5',
+            title:'Berhasil',
+            text:'Akun berhasil Di buat',
+            icon:'success',
+            confirmButtonText:'Oke'
+        })
     }
 
     return (
