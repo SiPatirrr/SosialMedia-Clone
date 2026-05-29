@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom"
 import Swal from "sweetalert2";
 import '../css/Login.css'
 import 'sweetalert2/themes/bootstrap-5.css'
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 const LoginPage = () => {
     const navigate = useNavigate()
@@ -10,6 +12,7 @@ const LoginPage = () => {
     const user = JSON.parse(data)
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const { setLoginUser } = useContext(AuthContext);
 
     const login = () => {
         if (username === "" && password === ""){
@@ -21,6 +24,13 @@ const LoginPage = () => {
                 confirmButtonText:'Oke'
             })
         } else if((username === user.username || username === user.email) && password === user.password) {
+            
+            localStorage.setItem(
+                "loginUser",
+                JSON.stringify(user)
+            )
+            
+            setLoginUser(user);
             navigate("/home")
             
         }else{

@@ -1,0 +1,23 @@
+.container-profile{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.profile-user{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 10px gray;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.profile-user img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}

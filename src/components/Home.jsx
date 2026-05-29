@@ -3,9 +3,12 @@ import '../css/Home.css';
 import Navbar from "./Navbar";
 import PostCard from "./PostCard";
 import SearchPage from "./Search";
+import ProfileAccount from "./ProfileAccount";
 
 const Home = () =>{
     const [users, setUsers] = useState([]);
+    const [loginUser, setLoginUser] = useState(null)
+    const [openSearch, setOpenSearch] = useState(false)
     
         useEffect(() => {
             fetch("https://jsonplaceholder.typicode.com/users")
@@ -23,13 +26,25 @@ const Home = () =>{
                 });
         }, []);
 
+        useEffect(() => {
+            const data = localStorage.getItem("loginUser")
+
+            if (data) {
+                setLoginUser(JSON.parse(data))
+            }
+
+        }, [])
+
     return (
         <div className="Container-home">
-            <Navbar />
-            <SearchPage users={users} />
+            <Navbar setOpenSearch={setOpenSearch} />
+            {
+                openSearch && <SearchPage users={users} />
+            }
             <div className="page">
             <PostCard users={users} setUsers={setUsers} />
             </div>
+            <ProfileAccount loginUser={loginUser} />
         </div>
     )
 }

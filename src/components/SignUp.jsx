@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import '../css/SignUp.css'
 import Swal from "sweetalert2";
 
@@ -8,6 +8,7 @@ const Signup = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [verifypassword, setVerifyPassword] = useState("")
+    const navigate = useNavigate()
 
     const Savedata = () => {
 
@@ -40,6 +41,7 @@ const Signup = () => {
             icon:'success',
             confirmButtonText:'Oke'
         })
+        navigate("/")
     }
 
     return (

@@ -4,9 +4,11 @@ import './App.css'
 import LoginPage from './components/Login'
 import Signup from './components/SignUp'
 import Home from './components/Home'
+import AuthProvider from './context/AuthContext'
 
 function App() {
   return (
+    <AuthProvider>
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<LoginPage />} />
@@ -14,6 +16,7 @@ function App() {
       <Route path="/home" element={<Home />} />
     </Routes>
     </BrowserRouter>
+    </AuthProvider>
   )
 }
 

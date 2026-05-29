@@ -10,7 +10,7 @@ import IconNotification from '../assets/notification.png';
 import IconReels from '../assets/reels.png';
 import IconAdd from '../assets/add.png';
 
-const Navbar = () =>{
+const Navbar = ({setOpenSearch}) =>{
     return (
     <nav className="Navbar">
       <ul>
@@ -19,7 +19,7 @@ const Navbar = () =>{
                 <img src={IconHome} alt="Home" className="Nav-icon" />
             </Link>
         </li>
-        <li>
+        <li onClick={() => setOpenSearch((prev) => !prev)}>
             <Link>
                 <img src={IconSearch} alt="Home" className="Nav-icon" />
             </Link>
