@@ -15,9 +15,18 @@ function PostCard({ users, setUsers }) {
         setUsers(
             users.map((user) => {
                 if (user.id === id) {
-                    return {
-                        ...user,
-                        likes: user.likes + 1
+                    if (user.liked) {
+                        return {
+                            ...user,
+                            likes: user.likes - 1,
+                            liked: false
+                        };
+                    }else {
+                        return {
+                            ...user,
+                            likes: user.likes + 1,
+                            liked: true
+                        };
                     }
                 } else {
                     return user

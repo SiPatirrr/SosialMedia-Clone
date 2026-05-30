@@ -17,7 +17,8 @@ const Home = () =>{
                     const NewData = data.map((user) => ({
                         ...user,
                         likes: 0,
-                        comment: 0
+                        comment: 0,
+                        liked: false
                     }))
                     setUsers(NewData);
                 })
