@@ -24,3 +24,20 @@ Cara Kerjanya:
 - Kemudian data ini akan di ubah ke JSON karna data yang di terima berupa string sehingga harus di ubah ke JSON dengan **response.json()**
 - Lalu karna di website ini memerlukan fitur likes maka data yang tadi sudah di dapat di modif agar like ini bisa tersimpan.
 - Kemudian data yang sudah jadi ditampilkan di UI melalui component **PostCard**
+
+## Implementasi React Hook
+
+- **useState()** : Dipakai untuk menyimpan data **Akun**
+![Screenshot Code 1](./public/useState.png)
+
+- **useEffect()** : Dipakai untuk mengambil data user dari **API** ketika halaman Home dirender
+![Screenshot Code 2](./public/useEffect.png)
+
+- **useRef()** : Dipakai untuk memberikan fokus otomatis ke kolom input pencarian saat component **Search** dibuka
+![Screenshot Code 3](./public/useRef.png)
+
+- **useContext()** : Dipakai untuk mengambil data user yang sedang login dari **AuthContext**
+![Screenshot Code 4](./public/useContext.png)
+
+## Hasil Deploy
+Untuk Hasilnya Bisa Di Lihat -> [Klik Disini](https://sosial-media-clone.vercel.app/)
